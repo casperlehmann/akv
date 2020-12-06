@@ -48,3 +48,34 @@ $ git clone https://github.com/casperlehmann/akv.git
 $ cd akv
 $ pip install -r requirements.txt
 ```
+
+## Shell script using Azure CLI
+
+Bonus contents! Setting environment variables directly from shell-script.
+
+``` sh
+# Add this to .zshrc
+akv () {
+    VARNAME=$1
+    SECRETNAME=$2
+    printf -v $VARNAME "$(az keyvault secret show --vault-name $KEY_VAULT_NAME --name $SECRETNAME -o yaml | grep value | cut -d: -f2 | xargs)"
+}
+```
+
+To use the function, you need to log in with the azure cli:
+
+``` sh
+$ az login
+```
+
+Then set the environment variable KEY_VAULT_NAME.
+
+``` sh
+$ KEY_VAULT_NAME=KV-Dev
+```
+
+``` sh
+$ akv variable_name ak_secret_name
+$ echo $variable_name
+ak_secret_value
+```
