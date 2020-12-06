@@ -62,7 +62,7 @@ akv () {
 }
 ```
 
-To use the function, you need to log in with the azure cli:
+To use the function, you need to log in with the Azure CLI:
 
 ``` sh
 $ az login
@@ -71,8 +71,10 @@ $ az login
 Then set the environment variable KEY_VAULT_NAME.
 
 ``` sh
-$ KEY_VAULT_NAME=KV-Dev
+$ KEY_VAULT_NAME=My-Key-Vault
 ```
+
+Then use the function to assign a secret to a variable:
 
 ``` sh
 $ akv variable_name ak_secret_name
