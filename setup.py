@@ -4,7 +4,7 @@ with open('README.md', 'r') as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name='akv-test',
+    name='akv',
     version='0.0.1',
     author='Casper Lehmann',
     author_email='casperlehmann@gmail.com',
@@ -19,4 +19,8 @@ setuptools.setup(
         'Operating System :: OS Independent',
     ],
     python_requires='>=3.6',
+    install_requires=[
+        'azure-identity',
+        'azure-keyvault-secrets',
+    ],
 )
