@@ -2,6 +2,10 @@
 
 This is a simple package for accessing secrets in Azure Key Vault.
 
+## Install
+
+```pip install akv```
+
 ## Setup
 
 The environment variables `AZURE_TENANT_ID`, `AZURE_CLIENT_ID`, `AZURE_CLIENT_SECRET` and `KEY_VAULT_NAME` all need to be set in your environment.
